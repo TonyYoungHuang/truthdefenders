@@ -1,0 +1,998 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Truth Defenders | A Resource Hub for Democracy Protection</title>
+    <meta name="description" content="A comprehensive resource hub for fact-checking, democracy protection, and combating misinformation.">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        'defender-blue': '#1A4789',
+                        'defender-light-blue': '#3A75C4',
+                        'defender-dark-blue': '#0E2C59',
+                        'defender-accent': '#FF6B35',
+                        'defender-purple': '#7C3AED',
+                        'defender-teal': '#0D9488',
+                    },
+                    fontFamily: {
+                        sans: ['Inter', 'system-ui', 'sans-serif'],
+                    }
+                }
+            }
+        }
+    </script>
+    <style type="text/css">
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
+        
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #f8fafc;
+        }
+        
+        .gradient-text {
+            background: linear-gradient(90deg, #1A4789, #3A75C4);
+            -webkit-background-clip: text;
+            background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+        
+        .gradient-bg {
+            background: linear-gradient(135deg, #1A4789, #3A75C4);
+        }
+        
+        .nav-item:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+        }
+        
+        .tab-content {
+            display: none;
+        }
+        
+        .tab-content.active {
+            display: block;
+        }
+        
+        .pattern-bg {
+            background-image: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%231A4789' fill-opacity='0.05'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+        }
+        
+        .blue-border {
+            position: relative;
+            border-radius: 0.5rem;
+            overflow: hidden;
+        }
+        
+        .blue-border::before {
+            content: '';
+            position: absolute;
+            top: -2px;
+            left: -2px;
+            right: -2px;
+            bottom: -2px;
+            background: linear-gradient(45deg, 
+                #1A4789, #3A75C4, #5696F3, #3A75C4, #1A4789);
+            z-index: -1;
+            border-radius: 0.6rem;
+            background-size: 400%;
+            animation: animate 20s linear infinite;
+        }
+        
+        @keyframes animate {
+            0% {
+                background-position: 0 0;
+            }
+            50% {
+                background-position: 400% 0;
+            }
+            100% {
+                background-position: 0 0;
+            }
+        }
+        
+        .wave-bg {
+            background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1440 320'%3E%3Cpath fill='%233A75C4' fill-opacity='0.1' d='M0,288L48,272C96,256,192,224,288,197.3C384,171,480,149,576,165.3C672,181,768,235,864,250.7C960,267,1056,245,1152,208C1248,171,1344,117,1392,90.7L1440,64L1440,320L1392,320C1344,320,1248,320,1152,320C1056,320,960,320,864,320C768,320,672,320,576,320C480,320,384,320,288,320C192,320,96,320,48,320L0,320Z'%3E%3C/path%3E%3C/svg%3E");
+            background-repeat: no-repeat;
+            background-position: bottom;
+            background-size: 100% 50%;
+        }
+    </style>
+</head>
+<body class="min-h-screen pattern-bg">
+    <!-- Header Banner -->
+    <header class="bg-defender-blue text-white py-8 shadow-lg">
+        <div class="container mx-auto px-4">
+            <div class="flex flex-col md:flex-row items-center justify-between">
+                <div class="mb-6 md:mb-0">
+                    <h1 class="text-3xl md:text-4xl font-bold text-white">Truth Defenders</h1>
+                    <p class="text-blue-100 opacity-90 mt-1">Protecting Democracy Through Facts</p>
+                </div>
+                <div class="flex flex-wrap gap-3 justify-center">
+                    <div class="blue-border">
+                        <a href="#factchecking" class="bg-white text-defender-blue font-semibold py-2 px-4 rounded-md transition-all duration-300 inline-block hover:bg-blue-50">
+                            Fact Checking
+                        </a>
+                    </div>
+                    <div class="blue-border">
+                        <a href="#movements" class="bg-white text-defender-blue font-semibold py-2 px-4 rounded-md transition-all duration-300 inline-block hover:bg-blue-50">
+                            Progressive Movements
+                        </a>
+                    </div>
+                    <div class="blue-border">
+                        <a href="#anti-misinformation" class="bg-white text-defender-blue font-semibold py-2 px-4 rounded-md transition-all duration-300 inline-block hover:bg-blue-50">
+                            Anti-Misinformation
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+    
+    <!-- Hero Section -->
+    <div class="bg-white shadow-md">
+        <div class="container mx-auto px-4 py-10">
+            <div class="flex flex-col md:flex-row items-center justify-between">
+                <div class="md:w-3/5 mb-8 md:mb-0 md:pr-10">
+                    <h2 class="text-3xl md:text-4xl font-bold text-gray-800 mb-4">
+                        Promoting <span class="text-defender-blue">Truth</span> & <span class="text-defender-blue">Accountability</span>
+                    </h2>
+                    <p class="text-gray-700 text-lg mb-6">
+                        Access reliable fact-checking resources, democracy protection initiatives, and organizations dedicated to combating misinformation and holding power accountable.
+                    </p>
+                    <div class="flex flex-wrap gap-3">
+                        <a href="#factchecking" class="bg-defender-blue hover:bg-defender-dark-blue text-white font-semibold py-2 px-6 rounded-md transition-colors duration-300">
+                            Explore Resources
+                        </a>
+                        <a href="#social" class="bg-defender-light-blue hover:bg-defender-blue text-white font-semibold py-2 px-6 rounded-md transition-colors duration-300">
+                            Social Accounts
+                        </a>
+                    </div>
+                </div>
+                <div class="md:w-2/5">
+                    <div class="relative w-full aspect-video md:aspect-square max-w-md mx-auto">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 800" class="w-full h-full">
+                            <!-- Constitution & Democracy Symbols -->
+                            <circle cx="400" cy="400" r="300" fill="#f0f4f8" />
+                            <g transform="translate(400, 400)">
+                                <!-- Constitution Symbol -->
+                                <g transform="translate(-180, -150) scale(0.8)">
+                                    <rect x="-40" y="-60" width="80" height="120" rx="5" fill="#1A4789" opacity="0.8" />
+                                    <rect x="-30" y="-50" width="60" height="10" rx="2" fill="white" />
+                                    <rect x="-30" y="-35" width="60" height="10" rx="2" fill="white" />
+                                    <rect x="-30" y="-20" width="60" height="10" rx="2" fill="white" />
+                                    <rect x="-30" y="-5" width="40" height="10" rx="2" fill="white" />
+                                    <rect x="-30" y="10" width="60" height="10" rx="2" fill="white" />
+                                    <rect x="-30" y="25" width="50" height="10" rx="2" fill="white" />
+                                    <rect x="-30" y="40" width="60" height="10" rx="2" fill="white" />
+                                </g>
+                                
+                                <!-- Liberty/Justice Symbol -->
+                                <g transform="translate(150, -120) scale(0.8)">
+                                    <circle cx="0" cy="0" r="60" fill="#3A75C4" opacity="0.8" />
+                                    <path d="M0,-30 L-40,30 L40,30 Z" fill="none" stroke="white" stroke-width="6" />
+                                    <circle cx="0" cy="-15" r="6" fill="white" />
+                                    <rect x="-25" y="30" width="50" height="10" rx="2" fill="white" />
+                                </g>
+                                
+                                <!-- Truth Symbol -->
+                                <g transform="translate(50, 100) scale(0.8)">
+                                    <circle cx="0" cy="0" r="60" fill="#5696F3" opacity="0.8" />
+                                    <path d="M-20,-15 L-5,15 L20,-25" fill="none" stroke="white" stroke-width="8" stroke-linecap="round" stroke-linejoin="round" />
+                                </g>
+                                
+                                <!-- Unity Symbol -->
+                                <g transform="translate(-110, 80) scale(0.8)">
+                                    <circle cx="0" cy="0" r="60" fill="#0E2C59" opacity="0.8" />
+                                    <circle cx="-20" cy="-5" r="15" fill="none" stroke="white" stroke-width="5" />
+                                    <circle cx="20" cy="-5" r="15" fill="none" stroke="white" stroke-width="5" />
+                                    <path d="M-20,-5 L20,-5" stroke="white" stroke-width="5" />
+                                    <path d="M0,-5 L0,25" stroke="white" stroke-width="5" />
+                                    <path d="M-20,25 L20,25" stroke="white" stroke-width="5" />
+                                </g>
+                                
+                                <!-- Voting/Democracy Symbol -->
+                                <g transform="translate(0, -220) scale(0.8)">
+                                    <circle cx="0" cy="0" r="60" fill="#FF6B35" opacity="0.7" />
+                                    <rect x="-25" y="-30" width="50" height="60" rx="5" fill="none" stroke="white" stroke-width="5" />
+                                    <path d="M-15,-15 L0,5 L15,-20" fill="none" stroke="white" stroke-width="5" stroke-linecap="round" stroke-linejoin="round" />
+                                </g>
+                            </g>
+                        </svg>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Main Content -->
+    <main class="container mx-auto px-4 py-8">
+        <!-- Category Tabs -->
+        <div class="bg-white rounded-lg shadow-md p-1 flex flex-wrap mb-8">
+            <button class="tab-button flex-1 font-semibold py-3 px-4 rounded-md transition-colors duration-300 text-defender-blue hover:bg-blue-50 focus:outline-none active-tab" data-tab="factchecking">
+                Fact Checking
+            </button>
+            <button class="tab-button flex-1 font-semibold py-3 px-4 rounded-md transition-colors duration-300 text-defender-blue hover:bg-blue-50 focus:outline-none" data-tab="movements">
+                Progressive Movements
+            </button>
+            <button class="tab-button flex-1 font-semibold py-3 px-4 rounded-md transition-colors duration-300 text-defender-blue hover:bg-blue-50 focus:outline-none" data-tab="social">
+                Social Media
+            </button>
+            <button class="tab-button flex-1 font-semibold py-3 px-4 rounded-md transition-colors duration-300 text-defender-blue hover:bg-blue-50 focus:outline-none" data-tab="anti-misinformation">
+                Anti-Misinformation
+            </button>
+            <button class="tab-button flex-1 font-semibold py-3 px-4 rounded-md transition-colors duration-300 text-defender-blue hover:bg-blue-50 focus:outline-none" data-tab="voting">
+                Voter Resources
+            </button>
+            <button class="tab-button flex-1 font-semibold py-3 px-4 rounded-md transition-colors duration-300 text-defender-blue hover:bg-blue-50 focus:outline-none" data-tab="media">
+                Independent Media
+            </button>
+        </div>
+
+        <!-- Fact Checking Tab -->
+        <div id="factchecking" class="tab-content active">
+            <div class="bg-white rounded-lg shadow-md p-6 mb-6">
+                <h2 class="text-2xl font-bold text-defender-blue mb-2">Fact-Checking Resources</h2>
+                <p class="text-gray-600 mb-6">Reliable sources to verify claims and combat misinformation.</p>
+                
+                <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5">
+                    <a href="https://www.politifact.com/factchecks/list/?ruling=false&speaker=donald-trump" class="nav-item bg-white p-5 rounded-lg border border-gray-100 shadow-sm hover:shadow-md transition-all duration-300 flex flex-col">
+                        <div class="bg-blue-100 text-defender-blue rounded-full w-12 h-12 flex items-center justify-center mb-3">
+                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
+                                <path stroke-linecap="round" stroke-linejoin="round" d="M9 12.75L11.25 15 15 9.75M21 12c0 1.268-.63 2.39-1.593 3.068a3.745 3.745 0 01-1.043 3.296 3.745 3.745 0 01-3.296 1.043A3.745 3.745 0 0112 21c-1.268 0-2.39-.63-3.068-1.593a3.746 3.746 0 01-3.296-1.043 3.745 3.745 0 01-1.043-3.296A3.745 3.745 0 013 12c0-1.268.63-2.39 1.593-3.068a3.745 3.745 0 011.043-3.296 3.746 3.746 0 013.296-1.043A3.746 3.746 0 0112 3c1.268 0 2.39.63 3.068 1.593a3.746 3.746 0 013.296 1.043 3.746 3.746 0 011.043 3.296A3.745 3.745 0 0121 12z" />
+                            </svg>
+                        </div>
+                        <h3 class="font-bold text-gray-900 text-lg mb-1">PolitiFact – Trump</h3>
+                        <p class="text-gray-600">Fact-checking platform tracking Trump's false claims with detailed analysis.</p>
+                        <div class="mt-4 pt-4 border-t border-gray-100 text-defender-blue font-medium">
+                            Visit Resource →
+                        </div>
+                    </a>
+                    
+                    <a href="https://www.factcheck.org/" class="nav-item bg-white p-5 rounded-lg border border-gray-100 shadow-sm hover:shadow-md transition-all duration-300 flex flex-col">
+                        <div class="bg-blue-100 text-defender-blue rounded-full w-12 h-12 flex items-center justify-center mb-3">
+                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
+                                <path stroke-linecap="round" stroke-linejoin="round" d="M12 7.5h1.5m-1.5 3h1.5m-7.5 3h7.5m-7.5 3h7.5m3-9h3.375c.621 0 1.125.504 1.125 1.125V18a2.25 2.25 0 01-2.25 2.25M16.5 7.5V18a2.25 2.25 0 002.25 2.25M16.5 7.5V4.875c0-.621-.504-1.125-1.125-1.125H4.125C3.504 3.75 3 4.254 3 4.875V18a2.25 2.25 0 002.25 2.25h13.5M6 7.5h3v3H6v-3z" />
+                            </svg>
+                        </div>
+                        <h3 class="font-bold text-gray-900 text-lg mb-1">FactCheck.org</h3>
+                        <p class="text-gray-600">Independent fact-checking focused on Trump's statements and political claims.</p>
+                        <div class="mt-4 pt-4 border-t border-gray-100 text-defender-blue font-medium">
+                            Visit Resource →
+                        </div>
+                    </a>
+                    
+                    <a href="https://www.washingtonpost.com/opinions/2025/05/02/trump-fantasy-lies/" class="nav-item bg-white p-5 rounded-lg border border-gray-100 shadow-sm hover:shadow-md transition-all duration-300 flex flex-col">
+                        <div class="bg-blue-100 text-defender-blue rounded-full w-12 h-12 flex items-center justify-center mb-3">
+                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
+                                <path stroke-linecap="round" stroke-linejoin="round" d="M12 7.5h1.5m-1.5 3h1.5m-7.5 3h7.5m-7.5 3h7.5m3-9h3.375c.621 0 1.125.504 1.125 1.125V18a2.25 2.25 0 01-2.25 2.25M16.5 7.5V18a2.25 2.25 0 002.25 2.25M16.5 7.5V4.875c0-.621-.504-1.125-1.125-1.125H4.125C3.504 3.75 3 4.254 3 4.875V18a2.25 2.25 0 002.25 2.25h13.5M6 7.5h3v3H6v-3z" />
+                            </svg>
+                        </div>
+                        <h3 class="font-bold text-gray-900 text-lg mb-1">Washington Post – Trump Lies</h3>
+                        <p class="text-gray-600">Editorial content revealing Trump's falsehoods and their impact on public discourse.</p>
+                        <div class="mt-4 pt-4 border-t border-gray-100 text-defender-blue font-medium">
+                            Visit Resource →
+                        </div>
+                    </a>
+                    
+                    <a href="https://www.snopes.com/tag/donald-trump/" class="nav-item bg-white p-5 rounded-lg border border-gray-100 shadow-sm hover:shadow-md transition-all duration-300 flex flex-col">
+                        <div class="bg-blue-100 text-defender-blue rounded-full w-12 h-12 flex items-center justify-center mb-3">
+                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
+                                <path stroke-linecap="round" stroke-linejoin="round" d="M21 21l-5.197-5.197m0 0A7.5 7.5 0 105.196 5.196a7.5 7.5 0 0010.607 10.607z" />
+                            </svg>
+                        </div>
+                        <h3 class="font-bold text-gray-900 text-lg mb-1">Snopes</h3>
+                        <p class="text-gray-600">One of the internet's oldest and most popular fact-checking sites tackling Trump-related claims.</p>
+                        <div class="mt-4 pt-4 border-t border-gray-100 text-defender-blue font-medium">
+                            Visit Resource →
+                        </div>
+                    </a>
+                    
+                    <a href="https://www.mediamatters.org/" class="nav-item bg-white p-5 rounded-lg border border-gray-100 shadow-sm hover:shadow-md transition-all duration-300 flex flex-col">
+                        <div class="bg-blue-100 text-defender-blue rounded-full w-12 h-12 flex items-center justify-center mb-3">
+                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
+                                <path stroke-linecap="round" stroke-linejoin="round" d="M3.98 8.223A10.477 10.477 0 001.934 12C3.226 16.338 7.244 19.5 12 19.5c.993 0 1.953-.138 2.863-.395M6.228 6.228A10.45 10.45 0 0112 4.5c4.756 0 8.773 3.162 10.065 7.498a10.523 10.523 0 01-4.293 5.774M6.228 6.228L3 3m3.228 3.228l3.65 3.65m7.894 7.894L21 21m-3.228-3.228l-3.65-3.65m0 0a3 3 0 10-4.243-4.243m4.242 4.242L9.88 9.88" />
+                            </svg>
+                        </div>
+                        <h3 class="font-bold text-gray-900 text-lg mb-1">Media Matters</h3>
+                        <p class="text-gray-600">Research and information center monitoring, analyzing, and correcting conservative misinformation.</p>
+                        <div class="mt-4 pt-4 border-t border-gray-100 text-defender-blue font-medium">
+                            Visit Resource →
+                        </div>
+                    </a>
+                    
+                    <a href="https://apnews.com/hub/ap-fact-check" class="nav-item bg-white p-5 rounded-lg border border-gray-100 shadow-sm hover:shadow-md transition-all duration-300 flex flex-col">
+                        <div class="bg-blue-100 text-defender-blue rounded-full w-12 h-12 flex items-center justify-center mb-3">
+                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
+                                <path stroke-linecap="round" stroke-linejoin="round" d="M12 6.042A8.967 8.967 0 006 3.75c-1.052 0-2.062.18-3 .512v14.25A8.987 8.987 0 016 18c2.305 0 4.408.867 6 2.292m0-14.25a8.966 8.966 0 016-2.292c1.052 0 2.062.18 3 .512v14.25A8.987 8.987 0 0018 18a8.967 8.967 0 00-6 2.292m0-14.25v14.25" />
+                            </svg>
+                        </div>
+                        <h3 class="font-bold text-gray-900 text-lg mb-1">AP Fact Check</h3>
+                        <p class="text-gray-600">Fact-checking service from The Associated Press, a trusted source for unbiased verification.</p>
+                        <div class="mt-4 pt-4 border-t border-gray-100 text-defender-blue font-medium">
+                            Visit Resource →
+                        </div>
+                    </a>
+                </div>
+            </div>
+            
+            <div class="bg-defender-blue/5 rounded-lg p-6">
+                <h3 class="text-xl font-bold text-defender-blue mb-3">Why Fact-Checking Matters</h3>
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
+                    <div class="bg-white rounded-lg p-4 shadow-sm">
+                        <div class="text-defender-blue mb-2">
+                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-8 h-8">
+                                <path stroke-linecap="round" stroke-linejoin="round" d="M12 18v-5.25m0 0a6.01 6.01 0 001.5-.189m-1.5.189a6.01 6.01 0 01-1.5-.189m3.75 7.478a12.06 12.06 0 01-4.5 0m3.75 2.383a14.406 14.406 0 01-3 0M14.25 18v-.192c0-.983.658-1.823 1.508-2.316a7.5 7.5 0 10-7.517 0c.85.493 1.509 1.333 1.509 2.316V18" />
+                            </svg>
+                        </div>
+                        <h4 class="font-semibold text-gray-900 mb-2">Combats Misinformation</h4>
+                        <p class="text-gray-600 text-sm">Helps identify and correct false information that spreads rapidly online.</p>
+                    </div>
+                    
+                    <div class="bg-white rounded-lg p-4 shadow-sm">
+                        <div class="text-defender-blue mb-2">
+                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-8 h-8">
+                                <path stroke-linecap="round" stroke-linejoin="round" d="M12 3v17.25m0 0c-1.472 0-2.882.265-4.185.75M12 20.25c1.472 0 2.882.265 4.185.75M18.75 4.97A48.416 48.416 0 0012 4.5c-2.291 0-4.545.16-6.75.47m13.5 0c1.01.143 2.01.317 3 .52m-3-.52l2.62 10.726c.122.499-.106 1.028-.589 1.202a5.99 5.99 0 01-2.031.352 5.99 5.99 0 01-2.031-.352c-.483-.174-.711-.703-.59-1.202L18.75 4.971zm-16.5.52c.99-.203 1.99-.377 3-.52m0 0l2.62 10.726c.122.499-.106 1.028-.589 1.202a5.99 5.99 0 01-2.031.352 5.99 5.99 0 01-2.031-.352c-.483-.174-.711-.703-.59-1.202L5.25 4.971z" />
+                            </svg>
+                        </div>
+                        <h4 class="font-semibold text-gray-900 mb-2">Promotes Accountability</h4>
+                        <p class="text-gray-600 text-sm">Holds public figures and institutions accountable for their statements and claims.</p>
+                    </div>
+                    
+                    <div class="bg-white rounded-lg p-4 shadow-sm">
+                        <div class="text-defender-blue mb-2">
+                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-8 h-8">
+                                <path stroke-linecap="round" stroke-linejoin="round" d="M2.25 12l8.954-8.955c.44-.439 1.152-.439 1.591 0L21.75 12M4.5 9.75v10.125c0 .621.504 1.125 1.125 1.125H9.75v-4.875c0-.621.504-1.125 1.125-1.125h2.25c.621 0 1.125.504 1.125 1.125V21h4.125c.621 0 1.125-.504 1.125-1.125V9.75M8.25 21h8.25" />
+                            </svg>
+                        </div>
+                        <h4 class="font-semibold text-gray-900 mb-2">Protects Democracy</h4>
+                        <p class="text-gray-600 text-sm">Helps citizens make informed decisions based on accurate information, essential for democratic processes.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Progressive Movements Tab -->
+        <div id="movements" class="tab-content">
+            <div class="bg-white rounded-lg shadow-md p-6 mb-6">
+                <h2 class="text-2xl font-bold text-defender-blue mb-2">Progressive Movements & Organizations</h2>
+                <p class="text-gray-600 mb-6">Groups working for policy change, social justice, and democracy protection.</p>
+                
+                <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5">
+                    <a href="https://www.reddit.com/r/50501/" class="nav-item bg-white p-5 rounded-lg border border-gray-100 shadow-sm hover:shadow-md transition-all duration-300 flex flex-col">
+                        <div class="bg-blue-100 text-defender-blue rounded-full w-12 h-12 flex items-center justify-center mb-3">
+                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
+                                <path stroke-linecap="round" stroke-linejoin="round" d="M15 19.128a9.38 9.38 0 002.625.372 9.337 9.337 0 004.121-.952 4.125 4.125 0 00-7.533-2.493M15 19.128v-.003c0-1.113-.285-2.16-.786-3.07M15 19.128v.106A12.318 12.318 0 018.624 21c-2.331 0-4.512-.645-6.374-1.766l-.001-.109a6.375 6.375 0 0111.964-3.07M12 6.375a3.375 3.375 0 11-6.75 0 3.375 3.375 0 016.75 0zm8.25 2.25a2.625 2.625 0 11-5.25 0 2.625 2.625 0 015.25 0z" />
+                            </svg>
+                        </div>
+                        <h3 class="font-bold text-gray-900 text-lg mb-1">50501 Movement</h3>
+                        <p class="text-gray-600">Community for nationwide anti-Trump protests and discussion.</p>
+                        <div class="mt-4 pt-4 border-t border-gray-100 text-defender-blue font-medium">
+                            Visit Organization →
+                        </div>
+                    </a>
+                    
+                    <a href="https://lincolnproject.us" class="nav-item bg-white p-5 rounded-lg border border-gray-100 shadow-sm hover:shadow-md transition-all duration-300 flex flex-col">
+                        <div class="bg-blue-100 text-defender-blue rounded-full w-12 h-12 flex items-center justify-center mb-3">
+                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
+                                <path stroke-linecap="round" stroke-linejoin="round" d="M10.34 15.84c-.688-.06-1.386-.09-2.09-.09H7.5a4.5 4.5 0 110-9h.75c.704 0 1.402-.03 2.09-.09m0 9.18c.253.962.584 1.892.985 2.783.247.55.06 1.21-.463 1.511l-.657.38c-.551.318-1.26.117-1.527-.461a20.845 20.845 0 01-1.44-4.282m3.102.069a18.03 18.03 0 01-.59-4.59c0-1.586.205-3.124.59-4.59m0 9.18a23.848 23.848 0 018.835 2.535M10.34 6.66a23.847 23.847 0 008.835-2.535m0 0A23.74 23.74 0 0018.795 3m.38 1.125a23.91 23.91 0 011.014 5.395m-1.014 8.855c-.118.38-.245.754-.38 1.125m.38-1.125a23.91 23.91 0 001.014-5.395m0-3.46c.495.413.811 1.035.811 1.73 0 .695-.316 1.317-.811 1.73m0-3.46a24.347 24.347 0 010 3.46" />
+                            </svg>
+                        </div>
+                        <h3 class="font-bold text-gray-900 text-lg mb-1">The Lincoln Project</h3>
+                        <p class="text-gray-600">Anti-Trump PAC founded by former Republicans dedicated to defeating Trumpism.</p>
+                        <div class="mt-4 pt-4 border-t border-gray-100 text-defender-blue font-medium">
+                            Visit Organization →
+                        </div>
+                    </a>
+                    
+                    <a href="https://rvat.org" class="nav-item bg-white p-5 rounded-lg border border-gray-100 shadow-sm hover:shadow-md transition-all duration-300 flex flex-col">
+                        <div class="bg-blue-100 text-defender-blue rounded-full w-12 h-12 flex items-center justify-center mb-3">
+                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
+                                <path stroke-linecap="round" stroke-linejoin="round" d="M12 21a9.004 9.004 0 008.716-6.747M12 21a9.004 9.004 0 01-8.716-6.747M12 21c2.485 0 4.5-4.03 4.5-9S14.485 3 12 3m0 18c-2.485 0-4.5-4.03-4.5-9S9.515 3 12 3m0 0a8.997 8.997 0 017.843 4.582M12 3a8.997 8.997 0 00-7.843 4.582m15.686 0A11.953 11.953 0 0112 10.5c-2.998 0-5.74-1.1-7.843-2.918m15.686 0A8.959 8.959 0 0121 12c0 .778-.099 1.533-.284 2.253m0 0A17.919 17.919 0 0112 16.5c-3.162 0-6.133-.815-8.716-2.247m0 0A9.015 9.015 0 013 12c0-1.605.42-3.113 1.157-4.418" />
+                            </svg>
+                        </div>
+                        <h3 class="font-bold text-gray-900 text-lg mb-1">Republican Voters Against Trump</h3>
+                        <p class="text-gray-600">Gathers testimonials from conservatives who oppose Trump's policies and behavior.</p>
+                        <div class="mt-4 pt-4 border-t border-gray-100 text-defender-blue font-medium">
+                            Visit Organization →
+                        </div>
+                    </a>
+                    
+                    <a href="https://actionnetwork.org/groups/americans-take-action" class="nav-item bg-white p-5 rounded-lg border border-gray-100 shadow-sm hover:shadow-md transition-all duration-300 flex flex-col">
+                        <div class="bg-blue-100 text-defender-blue rounded-full w-12 h-12 flex items-center justify-center mb-3">
+                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
+                                <path stroke-linecap="round" stroke-linejoin="round" d="M11.42 15.17L17.25 21A2.652 2.652 0 0021 17.25l-5.877-5.877M11.42 15.17l2.496-3.03c.317-.384.74-.626 1.208-.766M11.42 15.17l-4.655 5.653a2.548 2.548 0 11-3.586-3.586l6.837-5.63m5.108-.233c.55-.164 1.163-.188 1.743-.14a4.5 4.5 0 004.486-6.336l-3.276 3.277a3.004 3.004 0 01-2.25-2.25l3.276-3.276a4.5 4.5 0 00-6.336 4.486c.091 1.076-.071 2.264-.904 2.95l-.102.085m-1.745 1.437L5.909 7.5H4.5L2.25 3.75l1.5-1.5L7.5 4.5v1.409l4.26 4.26m-1.745 1.437l1.745-1.437m6.615 8.206L15.75 15.75M4.867 19.125h.008v.008h-.008v-.008z" />
+                            </svg>
+                        </div>
+                        <h3 class="font-bold text-gray-900 text-lg mb-1">Americans Against Trump</h3>
+                        <p class="text-gray-600">A grassroots organization opposing Trump's presidency and policies.</p>
+                        <div class="mt-4 pt-4 border-t border-gray-100 text-defender-blue font-medium">
+                            Visit Organization →
+                        </div>
+                    </a>
+                    
+                    <a href="https://indivisible.org" class="nav-item bg-white p-5 rounded-lg border border-gray-100 shadow-sm hover:shadow-md transition-all duration-300 flex flex-col">
+                        <div class="bg-blue-100 text-defender-blue rounded-full w-12 h-12 flex items-center justify-center mb-3">
+                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
+                                <path stroke-linecap="round" stroke-linejoin="round" d="M12 6v6h4.5m4.5 0a9 9 0 11-18 0 9 9 0 0118 0z" />
+                            </svg>
+                        </div>
+                        <h3 class="font-bold text-gray-900 text-lg mb-1">Indivisible</h3>
+                        <p class="text-gray-600">Progressive grassroots network resisting Trump-era policies with local action.</p>
+                        <div class="mt-4 pt-4 border-t border-gray-100 text-defender-blue font-medium">
+                            Visit Organization →
+                        </div>
+                    </a>
+                    
+                    <a href="https://www.citizen.org/tags/taking-on-trump/" class="nav-item bg-white p-5 rounded-lg border border-gray-100 shadow-sm hover:shadow-md transition-all duration-300 flex flex-col">
+                        <div class="bg-blue-100 text-defender-blue rounded-full w-12 h-12 flex items-center justify-center mb-3">
+                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
+                                <path stroke-linecap="round" stroke-linejoin="round" d="M9.53 16.122a3 3 0 00-5.78 1.128 2.25 2.25 0 01-2.4 2.245 4.5 4.5 0 008.4-2.245c0-.399-.078-.78-.22-1.128zm0 0a15.998 15.998 0 003.388-1.62m-5.043-.025a15.994 15.994 0 011.622-3.395m3.42 3.42a15.995 15.995 0 004.764-4.648l3.876-5.814a1.151 1.151 0 00-1.597-1.597L14.146 6.32a15.996 15.996 0 00-4.649 4.763m3.42 3.42a6.776 6.776 0 00-3.42-3.42" />
+                            </svg>
+                        </div>
+                        <h3 class="font-bold text-gray-900 text-lg mb-1">Public Citizen</h3>
+                        <p class="text-gray-600">Advocacy group exposing corporate influence under Trump and fighting for democracy.</p>
+                        <div class="mt-4 pt-4 border-t border-gray-100 text-defender-blue font-medium">
+                            Visit Organization →
+                        </div>
+                    </a>
+                    
+                    <a href="https://www.commoncause.org/actions/stop-trumps-anti-democracy-project-2025-agenda-2/" class="nav-item bg-white p-5 rounded-lg border border-gray-100 shadow-sm hover:shadow-md transition-all duration-300 flex flex-col">
+                        <div class="bg-blue-100 text-defender-blue rounded-full w-12 h-12 flex items-center justify-center mb-3">
+                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
+                                <path stroke-linecap="round" stroke-linejoin="round" d="M11.42 15.17L17.25 21A2.652 2.652 0 0021 17.25l-5.877-5.877M11.42 15.17l2.496-3.03c.317-.384.74-.626 1.208-.766M11.42 15.17l-4.655 5.653a2.548 2.548 0 11-3.586-3.586l6.837-5.63m5.108-.233c.55-.164 1.163-.188 1.743-.14a4.5 4.5 0 004.486-6.336l-3.276 3.277a3.004 3.004 0 01-2.25-2.25l3.276-3.276a4.5 4.5 0 00-6.336 4.486c.091 1.076-.071 2.264-.904 2.95l-.102.085m-1.745 1.437L5.909 7.5H4.5L2.25 3.75l1.5-1.5L7.5 4.5v1.409l4.26 4.26m-1.745 1.437l1.745-1.437m6.615 8.206L15.75 15.75M4.867 19.125h.008v.008h-.008v-.008z" />
+                            </svg>
+                        </div>
+                        <h3 class="font-bold text-gray-900 text-lg mb-1">Common Cause</h3>
+                        <p class="text-gray-600">Campaign to resist Trump's anti-democratic agenda and protect voting rights.</p>
+                        <div class="mt-4 pt-4 border-t border-gray-100 text-defender-blue font-medium">
+                            Visit Organization →
+                        </div>
+                    </a>
+                    
+                    <a href="https://moveme.studentorg.berkeley.edu/project/anti-trump/" class="nav-item bg-white p-5 rounded-lg border border-gray-100 shadow-sm hover:shadow-md transition-all duration-300 flex flex-col">
+                        <div class="bg-blue-100 text-defender-blue rounded-full w-12 h-12 flex items-center justify-center mb-3">
+                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
+                                <path stroke-linecap="round" stroke-linejoin="round" d="M4.26 10.147a60.436 60.436 0 00-.491 6.347A48.627 48.627 0 0112 20.904a48.627 48.627 0 018.232-4.41 60.46 60.46 0 00-.491-6.347m-15.482 0a50.57 50.57 0 00-2.658-.813A59.905 59.905 0 0112 3.493a59.902 59.902 0 0110.399 5.84c-.896.248-1.783.52-2.658.814m-15.482 0A50.697 50.697 0 0112 13.489a50.702 50.702 0 017.74-3.342M6.75 15a.75.75 0 100-1.5.75.75 0 000 1.5zm0 0v-3.675A55.378 55.378 0 0112 8.443m-7.007 11.55A5.981 5.981 0 006.75 15.75v-1.5" />
+                            </svg>
+                        </div>
+                        <h3 class="font-bold text-gray-900 text-lg mb-1">Berkeley Anti-Trump Project</h3>
+                        <p class="text-gray-600">Student-led resistance project against Trump policies and rhetoric.</p>
+                        <div class="mt-4 pt-4 border-t border-gray-100 text-defender-blue font-medium">
+                            Visit Organization →
+                        </div>
+                    </a>
+                    
+                    <a href="https://democrats.org" class="nav-item bg-white p-5 rounded-lg border border-gray-100 shadow-sm hover:shadow-md transition-all duration-300 flex flex-col">
+                        <div class="bg-blue-100 text-defender-blue rounded-full w-12 h-12 flex items-center justify-center mb-3">
+                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
+                                <path stroke-linecap="round" stroke-linejoin="round" d="M18 18.72a9.094 9.094 0 003.741-.479 3 3 0 00-4.682-2.72m.94 3.198l.001.031c0 .225-.012.447-.037.666A11.944 11.944 0 0112 21c-2.17 0-4.207-.576-5.963-1.584A6.062 6.062 0 016 18.719m12 0a5.971 5.971 0 00-.941-3.197m0 0A5.995 5.995 0 0012 12.75a5.995 5.995 0 00-5.058 2.772m0 0a3 3 0 00-4.681 2.72 8.986 8.986 0 003.74.477m.94-3.197a5.971 5.971 0 00-.94 3.197M15 6.75a3 3 0 11-6 0 3 3 0 016 0zm6 3a2.25 2.25 0 11-4.5 0 2.25 2.25 0 014.5 0zm-13.5 0a2.25 2.25 0 11-4.5 0 2.25 2.25 0 014.5 0z" />
+                            </svg>
+                        </div>
+                        <h3 class="font-bold text-gray-900 text-lg mb-1">Democratic National Committee</h3>
+                        <p class="text-gray-600">Official platform of the Democratic Party with policy positions and initiatives.</p>
+                        <div class="mt-4 pt-4 border-t border-gray-100 text-defender-blue font-medium">
+                            Visit Organization →
+                        </div>
+                    </a>
+                </div>
+            </div>
+        </div>
+
+        <!-- Social Media Tab -->
+        <div id="social" class="tab-content">
+            <div class="bg-white rounded-lg shadow-md p-6 mb-6">
+                <h2 class="text-2xl font-bold text-defender-blue mb-2">Social Media Resources</h2>
+                <p class="text-gray-600 mb-6">Follow active accounts focused on fact-based content and democracy protection.</p>
+                
+                <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5">
+                    <a href="https://x.com/rpsagainsttrump" class="nav-item bg-white p-5 rounded-lg border border-gray-100 shadow-sm hover:shadow-md transition-all duration-300 flex flex-col">
+                        <div class="bg-blue-100 text-defender-blue rounded-full w-12 h-12 flex items-center justify-center mb-3">
+                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
+                                <path stroke-linecap="round" stroke-linejoin="round" d="M6.633 10.5c.806 0 1.533-.446 2.031-1.08a9.041 9.041 0 012.861-2.4c.723-.384 1.35-.956 1.653-1.715a4.498 4.498 0 00.322-1.672V3a.75.75 0 01.75-.75A2.25 2.25 0 0116.5 4.5c0 1.152-.26 2.243-.723 3.218-.266.558.107 1.282.725 1.282h3.126c1.026 0 1.945.694 2.054 1.715.045.422.068.85.068 1.285a11.95 11.95 0 01-2.649 7.521c-.388.482-.987.729-1.605.729H13.48c-.483 0-.964-.078-1.423-.23l-3.114-1.04a4.501 4.501 0 00-1.423-.23H5.904M14.25 9h2.25M5.904 18.75c.083.205.173.405.27.602.197.4-.078.898-.523.898h-.908c-.889 0-1.713-.518-1.972-1.368a12 12 0 01-.521-3.507c0-1.553.295-3.036.831-4.398C3.387 10.203 4.167 9.75 5 9.75h1.053c.472 0 .745.556.5.96a8.958 8.958 0 00-1.302 4.665c0 1.194.232 2.333.654 3.375z" />
+                            </svg>
+                        </div>
+                        <h3 class="font-bold text-gray-900 text-lg mb-1">@RpsAgainstTrump</h3>
+                        <p class="text-gray-600">Social media advocacy by Republicans opposing Trump's policies and behavior.</p>
+                        <div class="mt-4 pt-4 border-t border-gray-100 text-defender-blue font-medium">
+                            Visit Account →
+                        </div>
+                    </a>
+                    
+                    <a href="https://www.instagram.com/explore/tags/impeachtrump/" class="nav-item bg-white p-5 rounded-lg border border-gray-100 shadow-sm hover:shadow-md transition-all duration-300 flex flex-col">
+                        <div class="bg-blue-100 text-defender-blue rounded-full w-12 h-12 flex items-center justify-center mb-3">
+                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
+                                <path stroke-linecap="round" stroke-linejoin="round" d="M6.827 6.175A2.31 2.31 0 015.186 7.23c-.38.054-.757.112-1.134.175C2.999 7.58 2.25 8.507 2.25 9.574V18a2.25 2.25 0 002.25 2.25h15A2.25 2.25 0 0021.75 18V9.574c0-1.067-.75-1.994-1.802-2.169a47.865 47.865 0 00-1.134-.175 2.31 2.31 0 01-1.64-1.055l-.822-1.316a2.192 2.192 0 00-1.736-1.039 48.774 48.774 0 00-5.232 0 2.192 2.192 0 00-1.736 1.039l-.821 1.316z" />
+                                <path stroke-linecap="round" stroke-linejoin="round" d="M16.5 12.75a4.5 4.5 0 11-9 0 4.5 4.5 0 019 0zM18.75 10.5h.008v.008h-.008V10.5z" />
+                            </svg>
+                        </div>
+                        <h3 class="font-bold text-gray-900 text-lg mb-1">#ImpeachTrump Instagram</h3>
+                        <p class="text-gray-600">Popular anti-Trump tag used to spread protest media and activism.</p>
+                        <div class="mt-4 pt-4 border-t border-gray-100 text-defender-blue font-medium">
+                            Visit Account →
+                        </div>
+                    </a>
+                    
+                    <a href="https://www.reddit.com/r/50501/" class="nav-item bg-white p-5 rounded-lg border border-gray-100 shadow-sm hover:shadow-md transition-all duration-300 flex flex-col">
+                        <div class="bg-blue-100 text-defender-blue rounded-full w-12 h-12 flex items-center justify-center mb-3">
+                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
+                                <path stroke-linecap="round" stroke-linejoin="round" d="M7.5 8.25h9m-9 3H12m-9.75 1.51c0 1.6 1.123 2.994 2.707 3.227 1.129.166 2.27.293 3.423.379.35.026.67.21.865.501L12 21l2.755-4.133a1.14 1.14 0 01.865-.501 48.172 48.172 0 003.423-.379c1.584-.233 2.707-1.626 2.707-3.228V6.741c0-1.602-1.123-2.995-2.707-3.228A48.394 48.394 0 0012 3c-2.392 0-4.744.175-7.043.513C3.373 3.746 2.25 5.14 2.25 6.741v6.018z" />
+                            </svg>
+                        </div>
+                        <h3 class="font-bold text-gray-900 text-lg mb-1">Reddit r/50501</h3>
+                        <p class="text-gray-600">Community for nationwide anti-Trump protests, organization, and discussion.</p>
+                        <div class="mt-4 pt-4 border-t border-gray-100 text-defender-blue font-medium">
+                            Visit Platform →
+                        </div>
+                    </a>
+                    
+                    <a href="https://twitter.com/TheDemocrats" class="nav-item bg-white p-5 rounded-lg border border-gray-100 shadow-sm hover:shadow-md transition-all duration-300 flex flex-col">
+                        <div class="bg-blue-100 text-defender-blue rounded-full w-12 h-12 flex items-center justify-center mb-3">
+                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
+                                <path stroke-linecap="round" stroke-linejoin="round" d="M6.633 10.5c.806 0 1.533-.446 2.031-1.08a9.041 9.041 0 012.861-2.4c.723-.384 1.35-.956 1.653-1.715a4.498 4.498 0 00.322-1.672V3a.75.75 0 01.75-.75A2.25 2.25 0 0116.5 4.5c0 1.152-.26 2.243-.723 3.218-.266.558.107 1.282.725 1.282h3.126c1.026 0 1.945.694 2.054 1.715.045.422.068.85.068 1.285a11.95 11.95 0 01-2.649 7.521c-.388.482-.987.729-1.605.729H13.48c-.483 0-.964-.078-1.423-.23l-3.114-1.04a4.501 4.501 0 00-1.423-.23H5.904M14.25 9h2.25M5.904 18.75c.083.205.173.405.27.602.197.4-.078.898-.523.898h-.908c-.889 0-1.713-.518-1.972-1.368a12 12 0 01-.521-3.507c0-1.553.295-3.036.831-4.398C3.387 10.203 4.167 9.75 5 9.75h1.053c.472 0 .745.556.5.96a8.958 8.958 0 00-1.302 4.665c0 1.194.232 2.333.654 3.375z" />
+                            </svg>
+                        </div>
+                        <h3 class="font-bold text-gray-900 text-lg mb-1">@TheDemocrats</h3>
+                        <p class="text-gray-600">Official Twitter account of the Democratic Party with news and policy updates.</p>
+                        <div class="mt-4 pt-4 border-t border-gray-100 text-defender-blue font-medium">
+                            Visit Account →
+                        </div>
+                    </a>
+                    
+                    <a href="https://twitter.com/MeidasTouch" class="nav-item bg-white p-5 rounded-lg border border-gray-100 shadow-sm hover:shadow-md transition-all duration-300 flex flex-col">
+                        <div class="bg-blue-100 text-defender-blue rounded-full w-12 h-12 flex items-center justify-center mb-3">
+                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
+                                <path stroke-linecap="round" d="M15.75 10.5l4.72-4.72a.75.75 0 011.28.53v11.38a.75.75 0 01-1.28.53l-4.72-4.72M4.5 18.75h9a2.25 2.25 0 002.25-2.25v-9a2.25 2.25 0 00-2.25-2.25h-9A2.25 2.25 0 002.25 7.5v9a2.25 2.25 0 002.25 2.25z" />
+                            </svg>
+                        </div>
+                        <h3 class="font-bold text-gray-900 text-lg mb-1">@MeidasTouch</h3>
+                        <p class="text-gray-600">Progressive PAC creating political videos and digital content opposing Trump.</p>
+                        <div class="mt-4 pt-4 border-t border-gray-100 text-defender-blue font-medium">
+                            Visit Account →
+                        </div>
+                    </a>
+                    
+                    <a href="https://twitter.com/ProjectLincoln" class="nav-item bg-white p-5 rounded-lg border border-gray-100 shadow-sm hover:shadow-md transition-all duration-300 flex flex-col">
+                        <div class="bg-blue-100 text-defender-blue rounded-full w-12 h-12 flex items-center justify-center mb-3">
+                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
+                                <path stroke-linecap="round" d="M15.75 10.5l4.72-4.72a.75.75 0 011.28.53v11.38a.75.75 0 01-1.28.53l-4.72-4.72M4.5 18.75h9a2.25 2.25 0 002.25-2.25v-9a2.25 2.25 0 00-2.25-2.25h-9A2.25 2.25 0 002.25 7.5v9a2.25 2.25 0 002.25 2.25z" />
+                            </svg>
+                        </div>
+                        <h3 class="font-bold text-gray-900 text-lg mb-1">@ProjectLincoln</h3>
+                        <p class="text-gray-600">Social media presence of The Lincoln Project sharing anti-Trump content.</p>
+                        <div class="mt-4 pt-4 border-t border-gray-100 text-defender-blue font-medium">
+                            Visit Account →
+                        </div>
+                    </a>
+                </div>
+            </div>
+        </div>
+
+        <!-- Anti-Misinformation Tab -->
+        <div id="anti-misinformation" class="tab-content">
+            <div class="bg-white rounded-lg shadow-md p-6 mb-6">
+                <h2 class="text-2xl font-bold text-defender-blue mb-2">Anti-Misinformation Resources</h2>
+                <p class="text-gray-600 mb-6">Sites dedicated to debunking false claims and fighting disinformation.</p>
+                
+                <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5">
+                    <a href="https://www.politifact.com/factchecks/list/?ruling=false&speaker=donald-trump" class="nav-item bg-white p-5 rounded-lg border border-gray-100 shadow-sm hover:shadow-md transition-all duration-300 flex flex-col">
+                        <div class="bg-blue-100 text-defender-blue rounded-full w-12 h-12 flex items-center justify-center mb-3">
+                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
+                                <path stroke-linecap="round" stroke-linejoin="round" d="M9 12.75L11.25 15 15 9.75M21 12c0 1.268-.63 2.39-1.593 3.068a3.745 3.745 0 01-1.043 3.296 3.745 3.745 0 01-3.296 1.043A3.745 3.745 0 0112 21c-1.268 0-2.39-.63-3.068-1.593a3.746 3.746 0 01-3.296-1.043 3.745 3.745 0 01-1.043-3.296A3.745 3.745 0 013 12c0-1.268.63-2.39 1.593-3.068a3.745 3.745 0 011.043-3.296 3.746 3.746 0 013.296-1.043A3.746 3.746 0 0112 3c1.268 0 2.39.63 3.068 1.593a3.746 3.746 0 013.296 1.043 3.746 3.746 0 011.043 3.296A3.745 3.745 0 0121 12z" />
+                            </svg>
+                        </div>
+                        <h3 class="font-bold text-gray-900 text-lg mb-1">PolitiFact Trump Tracker</h3>
+                        <p class="text-gray-600">Fact-checking platform tracking Trump's false claims and rating their accuracy.</p>
+                        <div class="mt-4 pt-4 border-t border-gray-100 text-defender-blue font-medium">
+                            Visit Resource →
+                        </div>
+                    </a>
+                    
+                    <a href="https://www.washingtonpost.com/opinions/2025/05/02/trump-fantasy-lies/" class="nav-item bg-white p-5 rounded-lg border border-gray-100 shadow-sm hover:shadow-md transition-all duration-300 flex flex-col">
+                        <div class="bg-blue-100 text-defender-blue rounded-full w-12 h-12 flex items-center justify-center mb-3">
+                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
+                                <path stroke-linecap="round" stroke-linejoin="round" d="M12 9v3.75m-9.303 3.376c-.866 1.5.217 3.374 1.948 3.374h14.71c1.73 0 2.813-1.874 1.948-3.374L13.949 3.378c-.866-1.5-3.032-1.5-3.898 0L2.697 16.126zM12 15.75h.007v.008H12v-.008z" />
+                            </svg>
+                        </div>
+                        <h3 class="font-bold text-gray-900 text-lg mb-1">Washington Post – Trump Lies</h3>
+                        <p class="text-gray-600">Editorial content revealing Trump's falsehoods and analyzing their impact.</p>
+                        <div class="mt-4 pt-4 border-t border-gray-100 text-defender-blue font-medium">
+                            Visit Resource →
+                        </div>
+                    </a>
+                    
+                    <a href="https://www.mediamatters.org/" class="nav-item bg-white p-5 rounded-lg border border-gray-100 shadow-sm hover:shadow-md transition-all duration-300 flex flex-col">
+                        <div class="bg-blue-100 text-defender-blue rounded-full w-12 h-12 flex items-center justify-center mb-3">
+                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
+                                <path stroke-linecap="round" stroke-linejoin="round" d="M21 21l-5.197-5.197m0 0A7.5 7.5 0 105.196 5.196a7.5 7.5 0 0010.607 10.607z" />
+                            </svg>
+                        </div>
+                        <h3 class="font-bold text-gray-900 text-lg mb-1">Media Matters</h3>
+                        <p class="text-gray-600">Research and information center monitoring, analyzing, and correcting conservative misinformation.</p>
+                        <div class="mt-4 pt-4 border-t border-gray-100 text-defender-blue font-medium">
+                            Visit Resource →
+                        </div>
+                    </a>
+                    
+                    <a href="https://www.propublica.org/" class="nav-item bg-white p-5 rounded-lg border border-gray-100 shadow-sm hover:shadow-md transition-all duration-300 flex flex-col">
+                        <div class="bg-blue-100 text-defender-blue rounded-full w-12 h-12 flex items-center justify-center mb-3">
+                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
+                                <path stroke-linecap="round" stroke-linejoin="round" d="M3.98 8.223A10.477 10.477 0 001.934 12C3.226 16.338 7.244 19.5 12 19.5c.993 0 1.953-.138 2.863-.395M6.228 6.228A10.45 10.45 0 0112 4.5c4.756 0 8.773 3.162 10.065 7.498a10.523 10.523 0 01-4.293 5.774M6.228 6.228L3 3m3.228 3.228l3.65 3.65m7.894 7.894L21 21m-3.228-3.228l-3.65-3.65m0 0a3 3 0 10-4.243-4.243m4.242 4.242L9.88 9.88" />
+                            </svg>
+                        </div>
+                        <h3 class="font-bold text-gray-900 text-lg mb-1">ProPublica</h3>
+                        <p class="text-gray-600">Independent investigative journalism uncovering abuses of power and betrayals of public trust.</p>
+                        <div class="mt-4 pt-4 border-t border-gray-100 text-defender-blue font-medium">
+                            Visit Resource →
+                        </div>
+                    </a>
+                    
+                    <a href="https://newrepublic.com/article/186690/transcript" class="nav-item bg-white p-5 rounded-lg border border-gray-100 shadow-sm hover:shadow-md transition-all duration-300 flex flex-col">
+                        <div class="bg-blue-100 text-defender-blue rounded-full w-12 h-12 flex items-center justify-center mb-3">
+                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
+                                <path stroke-linecap="round" stroke-linejoin="round" d="M9.75 3.104v5.714a2.25 2.25 0 01-.659 1.591L5 14.5M9.75 3.104c-.251.023-.501.05-.75.082m.75-.082a24.301 24.301 0 014.5 0m0 0v5.714c0 .597.237 1.17.659 1.591L19.8 15.3M14.25 3.104c.251.023.501.05.75.082M19.8 15.3l-1.57.393A9.065 9.065 0 0112 15a9.065 9.065 0 00-6.23-.693L5 14.5m14.8.8l1.402 1.402c1.232 1.232.65 3.318-1.067 3.611A48.309 48.309 0 0112 21c-2.773 0-5.491-.235-8.135-.687-1.718-.293-2.3-2.379-1.067-3.61L5 14.5" />
+                            </svg>
+                        </div>
+                        <h3 class="font-bold text-gray-900 text-lg mb-1">The New Republic</h3>
+                        <p class="text-gray-600">Investigative reports on MAGA misinformation and analysis of Trump's claims.</p>
+                        <div class="mt-4 pt-4 border-t border-gray-100 text-defender-blue font-medium">
+                            Visit Resource →
+                        </div>
+                    </a>
+                    
+                    <a href="https://www.usatoday.com/factcheck/" class="nav-item bg-white p-5 rounded-lg border border-gray-100 shadow-sm hover:shadow-md transition-all duration-300 flex flex-col">
+                        <div class="bg-blue-100 text-defender-blue rounded-full w-12 h-12 flex items-center justify-center mb-3">
+                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
+                                <path stroke-linecap="round" stroke-linejoin="round" d="M16.5 10.5V6.75a4.5 4.5 0 10-9 0v3.75m-.75 11.25h10.5a2.25 2.25 0 002.25-2.25v-6.75a2.25 2.25 0 00-2.25-2.25H6.75a2.25 2.25 0 00-2.25 2.25v6.75a2.25 2.25 0 002.25 2.25z" />
+                            </svg>
+                        </div>
+                        <h3 class="font-bold text-gray-900 text-lg mb-1">USA Today Fact Check</h3>
+                        <p class="text-gray-600">Verification of viral claims and political statements to separate fact from fiction.</p>
+                        <div class="mt-4 pt-4 border-t border-gray-100 text-defender-blue font-medium">
+                            Visit Resource →
+                        </div>
+                    </a>
+                </div>
+            </div>
+            
+            <div class="bg-defender-blue/5 rounded-lg p-6">
+                <h3 class="text-xl font-bold text-defender-blue mb-3">Common Misinformation Tactics</h3>
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
+                    <div class="bg-white rounded-lg p-4 shadow-sm">
+                        <div class="text-defender-blue mb-2">
+                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-8 h-8">
+                                <path stroke-linecap="round" stroke-linejoin="round" d="M2.25 15.75l5.159-5.159a2.25 2.25 0 013.182 0l5.159 5.159m-1.5-1.5l1.409-1.409a2.25 2.25 0 013.182 0l2.909 2.909m-18 3.75h16.5a1.5 1.5 0 001.5-1.5V6a1.5 1.5 0 00-1.5-1.5H3.75A1.5 1.5 0 002.25 6v12a1.5 1.5 0 001.5 1.5zm10.5-11.25h.008v.008h-.008V8.25zm.375 0a.375.375 0 11-.75 0 .375.375 0 01.75 0z" />
+                            </svg>
+                        </div>
+                        <h4 class="font-semibold text-gray-900 mb-2">Manipulated Media</h4>
+                        <p class="text-gray-600 text-sm">Edited images and videos taken out of context or altered to create false narratives.</p>
+                    </div>
+                    
+                    <div class="bg-white rounded-lg p-4 shadow-sm">
+                        <div class="text-defender-blue mb-2">
+                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-8 h-8">
+                                <path stroke-linecap="round" stroke-linejoin="round" d="M7.5 8.25h9m-9 3H12m-9.75 1.51c0 1.6 1.123 2.994 2.707 3.227 1.129.166 2.27.293 3.423.379.35.026.67.21.865.501L12 21l2.755-4.133a1.14 1.14 0 01.865-.501 48.172 48.172 0 003.423-.379c1.584-.233 2.707-1.626 2.707-3.228V6.741c0-1.602-1.123-2.995-2.707-3.228A48.394 48.394 0 0012 3c-2.392 0-4.744.175-7.043.513C3.373 3.746 2.25 5.14 2.25 6.741v6.018z" />
+                            </svg>
+                        </div>
+                        <h4 class="font-semibold text-gray-900 mb-2">Repetition & Scale</h4>
+                        <p class="text-gray-600 text-sm">False claims repeated so often they begin to sound true, amplified across social media platforms.</p>
+                    </div>
+                    
+                    <div class="bg-white rounded-lg p-4 shadow-sm">
+                        <div class="text-defender-blue mb-2">
+                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-8 h-8">
+                                <path stroke-linecap="round" stroke-linejoin="round" d="M3.98 8.223A10.477 10.477 0 001.934 12C3.226 16.338 7.244 19.5 12 19.5c.993 0 1.953-.138 2.863-.395M6.228 6.228A10.45 10.45 0 0112 4.5c4.756 0 8.773 3.162 10.065 7.498a10.523 10.523 0 01-4.293 5.774M6.228 6.228L3 3m3.228 3.228l3.65 3.65m7.894 7.894L21 21m-3.228-3.228l-3.65-3.65m0 0a3 3 0 10-4.243-4.243m4.242 4.242L9.88 9.88" />
+                            </svg>
+                        </div>
+                        <h4 class="font-semibold text-gray-900 mb-2">Fake Experts</h4>
+                        <p class="text-gray-600 text-sm">Using unqualified individuals presented as experts to legitimize false or misleading claims.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Voter Resources Tab -->
+        <div id="voting" class="tab-content">
+            <div class="bg-white rounded-lg shadow-md p-6 mb-6">
+                <h2 class="text-2xl font-bold text-defender-blue mb-2">Voter Education & Protection</h2>
+                <p class="text-gray-600 mb-6">Resources for voters to understand their rights and participate in democracy.</p>
+                
+                <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5">
+                    <a href="https://www.usa.gov/" class="nav-item bg-white p-5 rounded-lg border border-gray-100 shadow-sm hover:shadow-md transition-all duration-300 flex flex-col">
+                        <div class="bg-blue-100 text-defender-blue rounded-full w-12 h-12 flex items-center justify-center mb-3">
+                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
+                                <path stroke-linecap="round" stroke-linejoin="round" d="M9.75 9.75l4.5 4.5m0-4.5l-4.5 4.5M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+                            </svg>
+                        </div>
+                        <h3 class="font-bold text-gray-900 text-lg mb-1">USA.gov</h3>
+                        <p class="text-gray-600">The official portal of the U.S. federal government, providing a wide range of government services and information.</p>
+                        <div class="mt-4 pt-4 border-t border-gray-100 text-defender-blue font-medium">
+                            Visit Resource →
+                        </div>
+                    </a>
+                    
+                    <a href="https://www.vote.org/" class="nav-item bg-white p-5 rounded-lg border border-gray-100 shadow-sm hover:shadow-md transition-all duration-300 flex flex-col">
+                        <div class="bg-blue-100 text-defender-blue rounded-full w-12 h-12 flex items-center justify-center mb-3">
+                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
+                                <path stroke-linecap="round" stroke-linejoin="round" d="M2.25 15.75l5.159-5.159a2.25 2.25 0 013.182 0l5.159 5.159m-1.5-1.5l1.409-1.409a2.25 2.25 0 013.182 0l2.909 2.909m-18 3.75h16.5a1.5 1.5 0 001.5-1.5V6a1.5 1.5 0 00-1.5-1.5H3.75A1.5 1.5 0 002.25 6v12a1.5 1.5 0 001.5 1.5zm10.5-11.25h.008v.008h-.008V8.25zm.375 0a.375.375 0 11-.75 0 .375.375 0 01.75 0z" />
+                            </svg>
+                        </div>
+                        <h3 class="font-bold text-gray-900 text-lg mb-1">Vote.org</h3>
+                        <p class="text-gray-600">Voter registration information, polling locations, and other voting resources.</p>
+                        <div class="mt-4 pt-4 border-t border-gray-100 text-defender-blue font-medium">
+                            Visit Resource →
+                        </div>
+                    </a>
+                    
+                    <a href="https://866ourvote.org/" class="nav-item bg-white p-5 rounded-lg border border-gray-100 shadow-sm hover:shadow-md transition-all duration-300 flex flex-col">
+                        <div class="bg-blue-100 text-defender-blue rounded-full w-12 h-12 flex items-center justify-center mb-3">
+                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
+                                <path stroke-linecap="round" stroke-linejoin="round" d="M12 6v6h4.5m4.5 0a9 9 0 11-18 0 9 9 0 0118 0z" />
+                            </svg>
+                        </div>
+                        <h3 class="font-bold text-gray-900 text-lg mb-1">Election Protection Hotline</h3>
+                        <p class="text-gray-600">Resources for reporting voting issues and getting help on Election Day.</p>
+                        <div class="mt-4 pt-4 border-t border-gray-100 text-defender-blue font-medium">
+                            Visit Resource →
+                        </div>
+                    </a>
+                    
+                    <a href="https://www.ballotready.org/" class="nav-item bg-white p-5 rounded-lg border border-gray-100 shadow-sm hover:shadow-md transition-all duration-300 flex flex-col">
+                        <div class="bg-blue-100 text-defender-blue rounded-full w-12 h-12 flex items-center justify-center mb-3">
+                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
+                                <path stroke-linecap="round" stroke-linejoin="round" d="M12 18v-5.25m0 0a6.01 6.01 0 001.5-.189m-1.5.189a6.01 6.01 0 01-1.5-.189m3.75 7.478a12.06 12.06 0 01-4.5 0m3.75 2.383a14.406 14.406 0 01-3 0M14.25 18v-.192c0-.983.658-1.823 1.508-2.316a7.5 7.5 0 10-7.517 0c.85.493 1.509 1.333 1.509 2.316V18" />
+                            </svg>
+                        </div>
+                        <h3 class="font-bold text-gray-900 text-lg mb-1">Ballot Ready</h3>
+                        <p class="text-gray-600">Non-partisan information about what's on your ballot and where candidates stand.</p>
+                        <div class="mt-4 pt-4 border-t border-gray-100 text-defender-blue font-medium">
+                            Visit Resource →
+                        </div>
+                    </a>
+                    
+                    <a href="https://www.aclu.org/voting-rights" class="nav-item bg-white p-5 rounded-lg border border-gray-100 shadow-sm hover:shadow-md transition-all duration-300 flex flex-col">
+                        <div class="bg-blue-100 text-defender-blue rounded-full w-12 h-12 flex items-center justify-center mb-3">
+                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
+                                <path stroke-linecap="round" stroke-linejoin="round" d="M9 12.75L11.25 15 15 9.75M21 12c0 1.268-.63 2.39-1.593 3.068a3.745 3.745 0 01-1.043 3.296 3.745 3.745 0 01-3.296 1.043A3.745 3.745 0 0112 21c-1.268 0-2.39-.63-3.068-1.593a3.746 3.746 0 01-3.296-1.043 3.745 3.745 0 01-1.043-3.296A3.745 3.745 0 013 12c0-1.268.63-2.39 1.593-3.068a3.745 3.745 0 011.043-3.296 3.746 3.746 0 013.296-1.043A3.746 3.746 0 0112 3c1.268 0 2.39.63 3.068 1.593a3.746 3.746 0 013.296 1.043 3.746 3.746 0 011.043 3.296A3.745 3.745 0 0121 12z" />
+                            </svg>
+                        </div>
+                        <h3 class="font-bold text-gray-900 text-lg mb-1">ACLU Voting Rights</h3>
+                        <p class="text-gray-600">Information about voting rights and legal resources for voters facing obstacles.</p>
+                        <div class="mt-4 pt-4 border-t border-gray-100 text-defender-blue font-medium">
+                            Visit Resource →
+                        </div>
+                    </a>
+                    
+                    <a href="https://www.brennancenter.org/" class="nav-item bg-white p-5 rounded-lg border border-gray-100 shadow-sm hover:shadow-md transition-all duration-300 flex flex-col">
+                        <div class="bg-blue-100 text-defender-blue rounded-full w-12 h-12 flex items-center justify-center mb-3">
+                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
+                                <path stroke-linecap="round" stroke-linejoin="round" d="M12 6.042A8.967 8.967 0 006 3.75c-1.052 0-2.062.18-3 .512v14.25A8.987 8.987 0 016 18c2.305 0 4.408.867 6 2.292m0-14.25a8.966 8.966 0 016-2.292c1.052 0 2.062.18 3 .512v14.25A8.987 8.987 0 0018 18a8.967 8.967 0 00-6 2.292m0-14.25v14.25" />
+                            </svg>
+                        </div>
+                        <h3 class="font-bold text-gray-900 text-lg mb-1">Brennan Center for Justice</h3>
+                        <p class="text-gray-600">Research and advocacy for free, fair, and accessible elections.</p>
+                        <div class="mt-4 pt-4 border-t border-gray-100 text-defender-blue font-medium">
+                            Visit Resource →
+                        </div>
+                    </a>
+                </div>
+            </div>
+        </div>
+
+        <!-- Independent Media Tab -->
+        <div id="media" class="tab-content">
+            <div class="bg-white rounded-lg shadow-md p-6 mb-6">
+                <h2 class="text-2xl font-bold text-defender-blue mb-2">Independent Media Resources</h2>
+                <p class="text-gray-600 mb-6">Trusted sources for independent, fact-based journalism.</p>
+                
+                <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5">
+                    <a href="https://www.vox.com/" class="nav-item bg-white p-5 rounded-lg border border-gray-100 shadow-sm hover:shadow-md transition-all duration-300 flex flex-col">
+                        <div class="bg-blue-100 text-defender-blue rounded-full w-12 h-12 flex items-center justify-center mb-3">
+                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
+                                <path stroke-linecap="round" stroke-linejoin="round" d="M12 7.5h1.5m-1.5 3h1.5m-7.5 3h7.5m-7.5 3h7.5m3-9h3.375c.621 0 1.125.504 1.125 1.125V18a2.25 2.25 0 01-2.25 2.25M16.5 7.5V18a2.25 2.25 0 002.25 2.25M16.5 7.5V4.875c0-.621-.504-1.125-1.125-1.125H4.125C3.504 3.75 3 4.254 3 4.875V18a2.25 2.25 0 002.25 2.25h13.5M6 7.5h3v3H6v-3z" />
+                            </svg>
+                        </div>
+                        <h3 class="font-bold text-gray-900 text-lg mb-1">Vox</h3>
+                        <p class="text-gray-600">News and analysis critical of Trump's policies and behavior with explanatory journalism.</p>
+                        <div class="mt-4 pt-4 border-t border-gray-100 text-defender-blue font-medium">
+                            Visit Resource →
+                        </div>
+                    </a>
+                    
+                    <a href="https://www.propublica.org/" class="nav-item bg-white p-5 rounded-lg border border-gray-100 shadow-sm hover:shadow-md transition-all duration-300 flex flex-col">
+                        <div class="bg-blue-100 text-defender-blue rounded-full w-12 h-12 flex items-center justify-center mb-3">
+                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
+                                <path stroke-linecap="round" stroke-linejoin="round" d="M12 7.5h1.5m-1.5 3h1.5m-7.5 3h7.5m-7.5 3h7.5m3-9h3.375c.621 0 1.125.504 1.125 1.125V18a2.25 2.25 0 01-2.25 2.25M16.5 7.5V18a2.25 2.25 0 002.25 2.25M16.5 7.5V4.875c0-.621-.504-1.125-1.125-1.125H4.125C3.504 3.75 3 4.254 3 4.875V18a2.25 2.25 0 002.25 2.25h13.5M6 7.5h3v3H6v-3z" />
+                            </svg>
+                        </div>
+                        <h3 class="font-bold text-gray-900 text-lg mb-1">ProPublica</h3>
+                        <p class="text-gray-600">Independent, nonprofit newsroom that produces investigative journalism in the public interest.</p>
+                        <div class="mt-4 pt-4 border-t border-gray-100 text-defender-blue font-medium">
+                            Visit Resource →
+                        </div>
+                    </a>
+                    
+                    <a href="https://www.theguardian.com/us" class="nav-item bg-white p-5 rounded-lg border border-gray-100 shadow-sm hover:shadow-md transition-all duration-300 flex flex-col">
+                        <div class="bg-blue-100 text-defender-blue rounded-full w-12 h-12 flex items-center justify-center mb-3">
+                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
+                                <path stroke-linecap="round" stroke-linejoin="round" d="M12 7.5h1.5m-1.5 3h1.5m-7.5 3h7.5m-7.5 3h7.5m3-9h3.375c.621 0 1.125.504 1.125 1.125V18a2.25 2.25 0 01-2.25 2.25M16.5 7.5V18a2.25 2.25 0 002.25 2.25M16.5 7.5V4.875c0-.621-.504-1.125-1.125-1.125H4.125C3.504 3.75 3 4.254 3 4.875V18a2.25 2.25 0 002.25 2.25h13.5M6 7.5h3v3H6v-3z" />
+                            </svg>
+                        </div>
+                        <h3 class="font-bold text-gray-900 text-lg mb-1">The Guardian</h3>
+                        <p class="text-gray-600">International news organization known for its investigative journalism and progressive perspective.</p>
+                        <div class="mt-4 pt-4 border-t border-gray-100 text-defender-blue font-medium">
+                            Visit Resource →
+                        </div>
+                    </a>
+                    
+                    <a href="https://www.npr.org/" class="nav-item bg-white p-5 rounded-lg border border-gray-100 shadow-sm hover:shadow-md transition-all duration-300 flex flex-col">
+                        <div class="bg-blue-100 text-defender-blue rounded-full w-12 h-12 flex items-center justify-center mb-3">
+                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
+                                <path stroke-linecap="round" stroke-linejoin="round" d="M12 7.5h1.5m-1.5 3h1.5m-7.5 3h7.5m-7.5 3h7.5m3-9h3.375c.621 0 1.125.504 1.125 1.125V18a2.25 2.25 0 01-2.25 2.25M16.5 7.5V18a2.25 2.25 0 002.25 2.25M16.5 7.5V4.875c0-.621-.504-1.125-1.125-1.125H4.125C3.504 3.75 3 4.254 3 4.875V18a2.25 2.25 0 002.25 2.25h13.5M6 7.5h3v3H6v-3z" />
+                            </svg>
+                        </div>
+                        <h3 class="font-bold text-gray-900 text-lg mb-1">NPR</h3>
+                        <p class="text-gray-600">Independent, nonprofit media organization producing journalism in the public interest.</p>
+                        <div class="mt-4 pt-4 border-t border-gray-100 text-defender-blue font-medium">
+                            Visit Resource →
+                        </div>
+                    </a>
+                    
+                    <a href="https://www.motherjones.com/" class="nav-item bg-white p-5 rounded-lg border border-gray-100 shadow-sm hover:shadow-md transition-all duration-300 flex flex-col">
+                        <div class="bg-blue-100 text-defender-blue rounded-full w-12 h-12 flex items-center justify-center mb-3">
+                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
+                                <path stroke-linecap="round" stroke-linejoin="round" d="M12 7.5h1.5m-1.5 3h1.5m-7.5 3h7.5m-7.5 3h7.5m3-9h3.375c.621 0 1.125.504 1.125 1.125V18a2.25 2.25 0 01-2.25 2.25M16.5 7.5V18a2.25 2.25 0 002.25 2.25M16.5 7.5V4.875c0-.621-.504-1.125-1.125-1.125H4.125C3.504 3.75 3 4.254 3 4.875V18a2.25 2.25 0 002.25 2.25h13.5M6 7.5h3v3H6v-3z" />
+                            </svg>
+                        </div>
+                        <h3 class="font-bold text-gray-900 text-lg mb-1">Mother Jones</h3>
+                        <p class="text-gray-600">Nonprofit news organization specializing in investigative, political, and social justice reporting.</p>
+                        <div class="mt-4 pt-4 border-t border-gray-100 text-defender-blue font-medium">
+                            Visit Resource →
+                        </div>
+                    </a>
+                    
+                    <a href="https://theintercept.com/" class="nav-item bg-white p-5 rounded-lg border border-gray-100 shadow-sm hover:shadow-md transition-all duration-300 flex flex-col">
+                        <div class="bg-blue-100 text-defender-blue rounded-full w-12 h-12 flex items-center justify-center mb-3">
+                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
+                                <path stroke-linecap="round" stroke-linejoin="round" d="M12 7.5h1.5m-1.5 3h1.5m-7.5 3h7.5m-7.5 3h7.5m3-9h3.375c.621 0 1.125.504 1.125 1.125V18a2.25 2.25 0 01-2.25 2.25M16.5 7.5V18a2.25 2.25 0 002.25 2.25M16.5 7.5V4.875c0-.621-.504-1.125-1.125-1.125H4.125C3.504 3.75 3 4.254 3 4.875V18a2.25 2.25 0 002.25 2.25h13.5M6 7.5h3v3H6v-3z" />
+                            </svg>
+                        </div>
+                        <h3 class="font-bold text-gray-900 text-lg mb-1">The Intercept</h3>
+                        <p class="text-gray-600">Adversarial journalism focused on holding the powerful accountable through fearless reporting.</p>
+                        <div class="mt-4 pt-4 border-t border-gray-100 text-defender-blue font-medium">
+                            Visit Resource →
+                        </div>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- Newsletter Section -->
+    <section class="bg-white py-12 shadow-inner">
+        <div class="container mx-auto px-4">
+            <div class="max-w-3xl mx-auto text-center">
+                <h2 class="text-2xl md:text-3xl font-bold mb-4 text-defender-blue">Stay Informed & Engaged</h2>
+                <p class="text-gray-600 mb-6">Subscribe to receive updates about democracy preservation efforts, fact-checking resources, and progress in our movement.</p>
+                <div class="flex flex-col sm:flex-row gap-3 max-w-lg mx-auto">
+                    <input type="email" placeholder="Your email address" class="flex-grow px-4 py-3 rounded-md border border-gray-300 focus:outline-none focus:ring-2 focus:ring-defender-blue">
+                    <button class="bg-defender-blue text-white font-semibold py-3 px-6 rounded-md transition-all duration-300 hover:bg-defender-dark-blue">
+                        Subscribe
+                    </button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-defender-blue text-white py-10 wave-bg">
+        <div class="container mx-auto px-4">
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-10 mb-8">
+                <div>
+                    <h3 class="text-xl font-bold mb-4">Truth Defenders</h3>
+                    <p class="text-white/80 mb-4">A comprehensive hub for fact-based resources focused on protecting democracy and promoting accountability.</p>
+                    <div class="flex space-x-4">
+                        <a href="#" class="text-white hover:text-white/80 transition-colors duration-300">
+                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
+                                <path stroke-linecap="round" stroke-linejoin="round" d="M6.633 10.5c.806 0 1.533-.446 2.031-1.08a9.041 9.041 0 012.861-2.4c.723-.384 1.35-.956 1.653-1.715a4.498 4.498 0 00.322-1.672V3a.75.75 0 01.75-.75A2.25 2.25 0 0116.5 4.5c0 1.152-.26 2.243-.723 3.218-.266.558.107 1.282.725 1.282h3.126c1.026 0 1.945.694 2.054 1.715.045.422.068.85.068 1.285a11.95 11.95 0 01-2.649 7.521c-.388.482-.987.729-1.605.729H13.48c-.483 0-.964-.078-1.423-.23l-3.114-1.04a4.501 4.501 0 00-1.423-.23H5.904M14.25 9h2.25M5.904 18.75c.083.205.173.405.27.602.197.4-.078.898-.523.898h-.908c-.889 0-1.713-.518-1.972-1.368a12 12 0 01-.521-3.507c0-1.553.295-3.036.831-4.398C3.387 10.203 4.167 9.75 5 9.75h1.053c.472 0 .745.556.5.96a8.958 8.958 0 00-1.302 4.665c0 1.194.232 2.333.654 3.375z" />
+                            </svg>
+                        </a>
+                        <a href="#" class="text-white hover:text-white/80 transition-colors duration-300">
+                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
+                                <path stroke-linecap="round" stroke-linejoin="round" d="M12 21a9.004 9.004 0 008.716-6.747M12 21a9.004 9.004 0 01-8.716-6.747M12 21c2.485 0 4.5-4.03 4.5-9S14.485 3 12 3m0 18c-2.485 0-4.5-4.03-4.5-9S9.515 3 12 3m0 0a8.997 8.997 0 017.843 4.582M12 3a8.997 8.997 0 00-7.843 4.582m15.686 0A11.953 11.953 0 0112 10.5c-2.998 0-5.74-1.1-7.843-2.918m15.686 0A8.959 8.959 0 0121 12c0 .778-.099 1.533-.284 2.253m0 0A17.919 17.919 0 0112 16.5c-3.162 0-6.133-.815-8.716-2.247m0 0A9.015 9.015 0 013 12c0-1.605.42-3.113 1.157-4.418" />
+                            </svg>
+                        </a>
+                        <a href="#" class="text-white hover:text-white/80 transition-colors duration-300">
+                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
+                                <path stroke-linecap="round" d="M15.75 10.5l4.72-4.72a.75.75 0 011.28.53v11.38a.75.75 0 01-1.28.53l-4.72-4.72M4.5 18.75h9a2.25 2.25 0 002.25-2.25v-9a2.25 2.25 0 00-2.25-2.25h-9A2.25 2.25 0 002.25 7.5v9a2.25 2.25 0 002.25 2.25z" />
+                            </svg>
+                        </a>
+                    </div>
+                </div>
+                
+                <div>
+                    <h3 class="text-xl font-bold mb-4">Quick Links</h3>
+                    <ul class="space-y-2 text-white/80">
+                        <li><a href="#factchecking" class="hover:text-white transition-colors duration-300">Fact-Checking Resources</a></li>
+                        <li><a href="#movements" class="hover:text-white transition-colors duration-300">Progressive Movements</a></li>
+                        <li><a href="#social" class="hover:text-white transition-colors duration-300">Social Media Accounts</a></li>
+                        <li><a href="#anti-misinformation" class="hover:text-white transition-colors duration-300">Anti-Misinformation</a></li>
+                        <li><a href="#voting" class="hover:text-white transition-colors duration-300">Voter Resources</a></li>
+                    </ul>
+                </div>
+                
+                <div>
+                    <h3 class="text-xl font-bold mb-4">About Us</h3>
+                    <p class="text-white/80 mb-4">We're committed to promoting factual information and protecting democratic institutions. Our goal is to provide resources that combat misinformation and hold powerful figures accountable.</p>
+                    <p class="text-white/80">
+                        <a href="#" class="text-white hover:underline">Contact Us</a> | 
+                        <a href="#" class="text-white hover:underline">Privacy Policy</a>
+                    </p>
+                </div>
+            </div>
+            
+            <div class="border-t border-white/20 pt-6 text-center text-white/70 text-sm">
+                <p>&copy; 2025 Truth Defenders. All rights reserved.</p>
+                <p class="mt-1">This website is committed to fostering democracy and providing factual information.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Tab switching functionality
+        document.addEventListener('DOMContentLoaded', function() {
+            const tabs = document.querySelectorAll('.tab-button');
+            const tabContents = document.querySelectorAll('.tab-content');
+            
+            tabs.forEach(tab => {
+                tab.addEventListener('click', () => {
+                    // Remove active class from all tabs
+                    tabs.forEach(t => {
+                        t.classList.remove('active-tab');
+                        t.classList.remove('bg-blue-50');
+                    });
+                    
+                    // Add active class to clicked tab
+                    tab.classList.add('active-tab');
+                    tab.classList.add('bg-blue-50');
+                    
+                    // Hide all tab contents
+                    tabContents.forEach(content => {
+                        content.classList.remove('active');
+                    });
+                    
+                    // Show corresponding tab content
+                    const tabId = tab.getAttribute('data-tab');
+                    document.getElementById(tabId).classList.add('active');
+                });
+            });
+            
+            // Handle direct links with hash
+            if (window.location.hash) {
+                const tabId = window.location.hash.substring(1);
+                const tab = document.querySelector(`[data-tab="${tabId}"]`);
+                if (tab) {
+                    tab.click();
+                }
+            }
+            
+            // Add event listeners to hero buttons
+            document.querySelectorAll('[href^="#"]').forEach(anchor => {
+                anchor.addEventListener('click', function (e) {
+                    e.preventDefault();
+                    
+                    const tabId = this.getAttribute('href').substring(1);
+                    const tab = document.querySelector(`[data-tab="${tabId}"]`);
+                    if (tab) {
+                        tab.click();
+                        window.location.hash = tabId;
+                    }
+                });
+            });
+        });
+    </script>
+</body>
+</html>
